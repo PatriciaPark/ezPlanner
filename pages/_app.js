@@ -1,6 +1,7 @@
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
+import { ThemeProvider } from 'styled-components'
 
 const styles = {
     layout: {
@@ -20,22 +21,30 @@ const styles = {
     },
 }
 
+const theme = {
+    colors: {
+        primary: '#0070f3'
+    }
+}
+
 export default class RootApp extends App {
     render() {
-        const { Component, ...other } = this.props;
+        const { Component, ...pageProps } = this.props;
         return (
-            <Container>
+            <React.Fragment>
                 <Head>
                     <title>Static Website</title>
                 </Head>
                 <div style={styles.layout}>
                     <header style={styles.header}>Header</header>
                     <main style={styles.main}>
-                        <Component {...other} />
+                        <ThemeProvider theme={theme}>
+                            <Component {...pageProps} />
+                        </ThemeProvider>
                     </main>
                     <footer style={styles.footer}>Footer</footer>
                 </div>
-            </Container>
+            </React.Fragment>
         );
     }
 }
