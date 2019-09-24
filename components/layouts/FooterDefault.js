@@ -1,9 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
 
 const Footer = styled.div`
-    height: 60;
+    height: 60px;
 `;
 
 class FooterDefault extends Component {
@@ -14,7 +13,4 @@ class FooterDefault extends Component {
     }
 }
 
-FooterDefault.propTypes = {
-    title: PropTypes.string
-}
 export default FooterDefault;
