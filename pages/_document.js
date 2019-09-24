@@ -8,7 +8,7 @@ import { ServerStyleSheet } from 'styled-components'
 import { ServerStyleSheets } from '@material-ui/styles'
 
 
-class MyDocument extends Document {
+class RootDocument extends Document {
     static async getInitialProps(ctx) {
         const styledComponentsSheet = new ServerStyleSheet()
         const materialSheets = new ServerStyleSheets()
@@ -75,4 +75,4 @@ class MyDocument extends Document {
     }
 }
 
-export default MyDocument
+export default RootDocument

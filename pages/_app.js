@@ -1,7 +1,9 @@
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components';
+import HeaderDefault from '../components/layouts/HeaderDefault';
+import FooterDefault from '../components/layouts/FooterDefault';
 
 const styles = {
     layout: {
@@ -37,12 +39,13 @@ export default class RootApp extends App {
                 </Head>
                 <div style={styles.layout}>
                     <header style={styles.header}>Header</header>
+                    <HeaderDefault></HeaderDefault>
                     <main style={styles.main}>
                         <ThemeProvider theme={theme}>
                             <Component {...pageProps} />
                         </ThemeProvider>
                     </main>
-                    <footer style={styles.footer}>Footer</footer>
+                    <FooterDefault title='test1'></FooterDefault>
                 </div>
             </React.Fragment>
         );
